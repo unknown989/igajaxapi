@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IGAPI Query Tester</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style type="text/css">
+		span::before{
+			content: "\A"
+		}
+	</style>
+</head>
+<body style="background-color: #0d0d0d">
+<div style="background-color: #262626;border-radius: 0 0 15px 15px;text-align:center;display: flex;justify-content: center;align-items: center;padding:10px 0 15px 0;box-shadow: 1px 1px 25px 7px #303030;" align="center">
+<br>
+<input type="text" id="query" name="query" placeholder="Query..." style="margin-right: 5px;">
+<button class="btn btn-light" id="goBtn">Go</button>
+<button class="btn btn-dark" style="left:100%;transform: translate(150%,0);">Preview</button>
+</div>
+<span></span><div id="queryDisplay" style="width: 100%;left:50%;transform: translate(0%,50%);color: gray;word-wrap: break-word;margin-bottom: 5px;" align="center"></div>
+<div style="position: relative;display: flex;justify-content: center;align-items: center;margin-top:40px;height:600px;">
+	<div style="position: absolute;top:0%;transform: translate(0,-0%);height: 35px;width:90%;background-color: #000;border:1px solid #343434;border-radius:8px 8px 0 0;display: flex;justify-content: center;align-items: center;"><select name="selectMenu" id="optionSelector" style="filter: invert();"><option value="users" selected autocomplete="off">Users</option>
+		<option value="hashtags">Hashtags</option><option value="places">Places</option></select></div>
+	<textarea id="textArea" style="color:gray;resize: both;background-color: black;border:1px solid #262626;width:90%;height:90%;max-width: 95%;max-height: 95%;min-height: 40%;min-width: 40%;padding: 5px;" readonly>
+		
+	</textarea>
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
