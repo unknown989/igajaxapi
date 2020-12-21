@@ -14,16 +14,18 @@
 <br>
 <input type="text" id="query" name="query" placeholder="Query..." style="margin-right: 5px;">
 <button class="btn btn-light" id="goBtn">Go</button>
-<button class="btn btn-dark" style="left:100%;transform: translate(150%,0);">Preview</button>
+<button class="btn btn-dark" style="left:100%;transform: translate(150%,0);" disabled>Preview</button>
 </div>
 <span></span><div id="queryDisplay" style="width: 100%;left:50%;transform: translate(0%,50%);color: gray;word-wrap: break-word;margin-bottom: 5px;" align="center"></div>
 <div style="position: relative;display: flex;justify-content: center;align-items: center;margin-top:40px;height:600px;">
-	<div style="position: absolute;top:0%;transform: translate(0,-0%);height: 35px;width:90%;background-color: #000;border:1px solid #343434;border-radius:8px 8px 0 0;display: flex;justify-content: center;align-items: center;"><select name="selectMenu" id="optionSelector" style="filter: invert();"><option value="users" selected autocomplete="off">Users</option>
+	<div id="selectContainer" style="position: absolute;top:0%;transform: translate(0,-0%);height: 35px;width:90%;background-color: #000;border:1px solid #343434;border-radius:8px 8px 0 0;display: flex;justify-content: center;align-items: center;"><select name="selectMenu" id="optionSelector" style="filter: invert();"><option value="users" selected autocomplete="off">Users</option>
 		<option value="hashtags">Hashtags</option><option value="places">Places</option></select></div>
-	<textarea id="textArea" style="color:gray;resize: both;background-color: black;border:1px solid #262626;width:90%;height:90%;max-width: 95%;max-height: 95%;min-height: 40%;min-width: 40%;padding: 5px;" readonly>
+	<textarea id="textArea" style="color:gray;resize: horizontal;background-color: black;border:1px solid #262626;width:90%;height:90%;max-width: 95%;max-height: 95%;min-height: 40%;min-width: 40%;padding: 5px;" readonly>
 		
 	</textarea>
 </div>
+<hr>
+<div align="center" style="color: white">Copyright &copy; 2020-2021 .All rights reserved to unknown989</div>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

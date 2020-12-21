@@ -9,6 +9,7 @@ var options = document.getElementById("optionSelector").value;
 
 document.getElementById("goBtn").addEventListener("click",(e)=>{
 var query = document.getElementById("query").value;
+
 if (query){
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = ()=>{
@@ -43,3 +44,9 @@ document.getElementById("optionSelector").addEventListener("change",()=>{
 	document.getElementById("textArea").innerHTML = JSON.stringify(JSON.parse(resp)[options]);
 	}catch{}
 })
+
+document.getElementById("textArea").addEventListener("mousemove",resize);
+
+function resize(){
+	document.getElementById("selectContainer").style.width = document.getElementById("textArea").style.width;
+}
