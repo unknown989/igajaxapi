@@ -49,7 +49,17 @@ document.getElementById("optionSelector").addEventListener("change",()=>{
 document.getElementById("textArea").addEventListener("mousemove",resize);
 
 function resize(){
-	document.getElementById("selectContainer").style.width = document.getElementById("textArea").style.width;
+	
+	var sc = document.getElementById("selectContainer")
+	var co = document.getElementById("container");
+	var coWidth = co.offsetWidth;
+	var relativeWidth = (95*coWidth)/100;
+	if (document.getElementById("textArea") >= relativeWidth){
+	sc.style.width = relativeWidth;
+	}else{
+	sc.style.width = document.getElementById("textArea").style.width;
+	}
+
 }
 // Disable The Effects
 document.getElementById("previewCloseBtn").addEventListener("click",()=>{
