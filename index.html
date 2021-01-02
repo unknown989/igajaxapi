@@ -2,19 +2,35 @@
 <html>
 <head>
 	<title>IGAPI Query Tester</title>
+	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<style type="text/css">
-		span::before{
-			content: "\A"
+		.unclickable{
+			overflow: hidden;
+			pointer-events: none;
+			user-select: none;
+		}
+		.clickable{
+			overflow: auto;
+			pointer-events: auto;
+			user-select: text;
+		}
+		.blur{
+			filter:blur(10px);
+			z-index: 10;
+
+		}
+		.unblur{
+			z-index: 0;
 		}
 	</style>
 </head>
-<body style="background-color: #0d0d0d">
-<div style="background-color: #262626;border-radius: 0 0 15px 15px;text-align:center;display: flex;justify-content: center;align-items: center;padding:10px 0 15px 0;box-shadow: 1px 1px 25px 7px #303030;" align="center">
+<body style="background-color: #0d0d0d;" class="clickable">
+<div style="background-color: #262626;border-radius: 0 0 15px 15px;text-align:center;display: flex;justify-content: center;align-items: center;padding:10px 0 15px 0;box-shadow: 1px 1px 25px 7px #303030;transition: 0.15s ease;" align="center" id="main">
 <br>
 <input type="text" id="query" name="query" placeholder="Query..." style="margin-right: 5px;">
 <button class="btn btn-light" id="goBtn">Go</button>
-<button class="btn btn-dark" style="left:100%;transform: translate(150%,0);" disabled>Preview</button>
+<button class="btn btn-dark" id="previewBtn" style="left:100%;transform: translate(150%,0);" disabled>Preview</button>
 </div>
 <span></span><div id="queryDisplay" style="width: 100%;left:50%;transform: translate(0%,50%);color: gray;word-wrap: break-word;margin-bottom: 5px;" align="center"></div>
 <div style="position: relative;display: flex;justify-content: center;align-items: center;margin-top:40px;height:600px;">
@@ -25,6 +41,19 @@
 	</textarea>
 </div>
 <hr>
+<div id="blurBlock" style="display: none;position: absolute;top:50%;left:50%;width: 100%;height: 100%;transform: translate(-50%,-50%);background-color: rgba(80,80,80,0.5);opacity: 0;transition: 0.2s ease;"></div>
+<div id="preview" class="unclickable" style="display: none;position: absolute;z-index:10;top:50%;left: 50%;border:1px solid #262626;width: 90%;height: 90%;transform: translate(-50%,-50%);background-color: #191919;">
+	<div style="margin-bottom:5px;background-color: #242424;border-bottom: 2px solid #151515;width:100%;height:48px;">
+	<button id="previewCloseBtn" style="float: right;margin:4px;" class="btn btn-dark">
+		<i class="fas fa-times"></i>
+	</button>
+	</div>
+
+	<div id="previewArea" style="display: flex;flex-wrap: wrap;flex-basis: 5px;justify-content: center;">
+		
+	</div>
+	<hr>
+</div>
 <div align="center" style="color: white">Copyright &copy; 2020-2021 .All rights reserved to unknown989</div>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
