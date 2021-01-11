@@ -96,7 +96,7 @@ document.getElementById("previewBtn").addEventListener("click",()=>{
 	jsonObj = resp[options];
 	var area = document.getElementById("previewArea");
 
-	for (var i = jsonObj.length - 1; i >= 0; i--) {
+	for (var i = 0; i <= jsonObj.length - 1; i++) {
 				var element = document.createElement("div");
 				if (options == "hashtags"){
 				// Initializing and filling variables
