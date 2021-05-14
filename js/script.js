@@ -20,9 +20,9 @@ if (query){
 			document.getElementById("previewBtn").disabled = false;
 		}
 	}
+	req.open("GET",apiLink+query,true);
 	req.setRequestHeader("Access-Control-Allow-Origin","https://instagram.com");
 	req.setRequestHeader("Vary","Origin");
-	req.open("GET",apiLink+query+((/\?/).test(apiLink) ? "&" : "?") + (new Date()).getTime(),true);
 	req.send();
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
 	}
