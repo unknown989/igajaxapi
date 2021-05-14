@@ -20,7 +20,7 @@ if (query){
 			document.getElementById("previewBtn").disabled = false;
 		}
 	}
-
+	req.setRequestHeader("Access-Control-Allow-Origin":"*");
 	req.open("GET",apiLink+query,true);
 	req.send();
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
