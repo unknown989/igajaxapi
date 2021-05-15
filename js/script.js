@@ -20,7 +20,7 @@ if (query){
 			document.getElementById("previewBtn").disabled = false;
 		}
 	}
-	req.open("GET",apiLink+query) + (new Date()).getTime(),true);
+	req.open("GET",apiLink+query,true);
 	req.send();
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
 	}
