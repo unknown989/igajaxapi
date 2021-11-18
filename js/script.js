@@ -12,7 +12,11 @@ document.getElementById("goBtn").addEventListener("click",(e)=>{
 var query = document.getElementById("query").value;
 
 if(query){
-	fetch(apiLink+query)
+	fetch(apiLink+query,{
+        method : "GET",
+        mode: 'cors',
+        headers: headers
+    })
 		.then( response => response.text())
 		.then(data => {
 			resp = JSON.parse(data);
