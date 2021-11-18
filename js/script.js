@@ -18,6 +18,7 @@ if(query){
         credentials: 'same-origin'
     })
 		.then( response => {
+			console.log(response.json());
 			return response.json();
 		})
 		.then(data => {
