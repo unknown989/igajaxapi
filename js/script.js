@@ -19,7 +19,7 @@ if(query){
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
 		
 }
-)}
+}
 document.getElementById('query').addEventListener("input",(e)=>{
 	var elemValue = document.getElementById("query").value;
 	if (elemValue){
