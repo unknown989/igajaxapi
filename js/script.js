@@ -17,7 +17,7 @@ if(query){
         mode: 'no-cors',
         credentials: 'same-origin'
     })
-		.then( response => response.text())
+		.then( response => console.log(response.text()))
 		.then(data => {
 			console.log(data);
 			resp = JSON.parse(data);
