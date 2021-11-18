@@ -11,7 +11,7 @@ var options = document.getElementById("optionSelector").value;
 document.getElementById("goBtn").addEventListener("click",(e)=>{
 var query = document.getElementById("query").value;
 if(query){
-	let req = await fetch(apiLink+query)
+	let req = fetch(apiLink+query)
 	resp = JSON.parse(req.text()) ;
 	document.getElementById("textArea").innerHTML = (resp[options].length > 0) ? JSON.stringify(resp[options]) : "Not Found";
 	document.getElementById("previewBtn").disabled = false;
