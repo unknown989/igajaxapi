@@ -14,8 +14,8 @@ var query = document.getElementById("query").value;
 if(query){
 	fetch(apiLink+query,{
         method : "GET",
-        mode: 'cors',
-        headers: headers
+        mode: 'no-cors',
+        credentials: 'same-origin'
     })
 		.then( response => response.text())
 		.then(data => {
