@@ -17,13 +17,16 @@ if(query){
         mode: 'no-cors',
         credentials: 'same-origin'
     })
-		.then( response => console.log(response.text()))
+		.then( response => {
+			return response.json();
+		})
 		.then(data => {
 			console.log(data);
 			resp = JSON.parse(data);
 			document.getElementById("textArea").innerHTML = (resp[options].length > 0) ? JSON.stringify(resp[options]) : "Not Found";
 			document.getElementById("previewBtn").disabled = false;
-		}) 
+		})
+		.catch(err =>{console.error(err);})
 
 
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
