@@ -10,11 +10,16 @@ var options = document.getElementById("optionSelector").value;
 
 document.getElementById("goBtn").addEventListener("click",(e)=>{
 var query = document.getElementById("query").value;
+
 if(query){
-	let req = fetch(apiLink+query);
-	resp = JSON.parse(req.text()) ;
-	document.getElementById("textArea").innerHTML = (resp[options].length > 0) ? JSON.stringify(resp[options]) : "Not Found";
-	document.getElementById("previewBtn").disabled = false;
+	fetch(apiLink+query)
+		.then( response => response.text())
+		.then(data => {
+			resp = JSON.parse(data);
+			document.getElementById("textArea").innerHTML = (resp[options].length > 0) ? JSON.stringify(resp[options]) : "Not Found";
+			document.getElementById("previewBtn").disabled = false;
+		}) 
+
 
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
 		
