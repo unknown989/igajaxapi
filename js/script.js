@@ -19,6 +19,7 @@ if(query){
     })
 		.then( response => response.text())
 		.then(data => {
+			console.log(data);
 			resp = JSON.parse(data);
 			document.getElementById("textArea").innerHTML = (resp[options].length > 0) ? JSON.stringify(resp[options]) : "Not Found";
 			document.getElementById("previewBtn").disabled = false;
