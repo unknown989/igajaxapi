@@ -10,22 +10,16 @@ var options = document.getElementById("optionSelector").value;
 
 document.getElementById("goBtn").addEventListener("click",(e)=>{
 var query = document.getElementById("query").value;
+if(query){
+	let req = await fetch(apiLink+query)
+	resp = JSON.parse(req.text()) ;
+	document.getElementById("textArea").innerHTML = (resp[options].length > 0) ? JSON.stringify(resp[options]) : "Not Found";
+	document.getElementById("previewBtn").disabled = false;
 
-if (query){
-	var req = new XMLHttpRequest();
-	req.onreadystatechange = ()=>{
-		if (req.readyState == 4 && req.status == 200){
-			resp = JSON.parse(req.responseText) ;
-			document.getElementById("textArea").innerHTML = (JSON.parse(req.responseText)[options].length > 0) ? JSON.stringify(JSON.parse(req.responseText)[options]) : "Not Found";
-			document.getElementById("previewBtn").disabled = false;
-		}
-	}
-	req.open("GET",apiLink+query,true);
-	req.send();
 	document.getElementById("textArea").innerHTML = "Sending a request to "+apiLink+query+"...";
-	}
-})
-
+		
+}
+)}
 document.getElementById('query').addEventListener("input",(e)=>{
 	var elemValue = document.getElementById("query").value;
 	if (elemValue){
